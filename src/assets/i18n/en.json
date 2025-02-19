@@ -1,0 +1,83 @@
+{
+  "COMMON": {
+    "SEARCH": "Search",
+    "CATEGORIES": "Categories",
+    "LOGIN": "Login",
+    "CART": "Cart",
+    "CART_COUNT": "Cart Item Count",
+    "MY_ACCOUNT": "My Account",
+    "LOGOUT": "Logout"
+  },
+  "CATEGORIES": {
+    "cosmetics": "Cosmetics",
+    "furniture": "Furniture",
+    "food": "Food",
+    "pet": "Pet"
+  },
+  "PRODUCTS": {
+    "VIEW_DETAILS": "View Details",
+    "ADD_TO_CART": "Add to Cart",
+    "PRICE": "Price",
+    "1001": "L'Oreal Paris Moisturizing Cream",
+    "1002": "MAC Lipstick Set",
+    "1003": "Maybelline Mascara",
+    "2001": "Modern Sofa Set",
+    "2002": "Work Desk",
+    "2003": "Dining Table Set",
+    "3001": "Organic Fruit Basket",
+    "3002": "Premium Coffee Beans",
+    "1001_DESC": "24-hour lasting moisturizing effect",
+    "1002_DESC": "Long-lasting matte lipsticks",
+    "1003_DESC": "Volumizing and lengthening mascara",
+    "4001": "Royal Canin Dog Food",
+    "4001_DESC": "Premium food for adult dogs",
+    "4002": "Whiskas Cat Food",
+    "4002_DESC": "Cat food for all ages"
+  },
+  "PRODUCT": {
+    "ADD_TO_CART": "Add to Cart",
+    "VIEW_DETAILS": "View Details",
+    "DESCRIPTION": "Product Description",
+    "REVIEWS": "Customer Reviews",
+    "QUANTITY": "Quantity"
+  },
+  "CART": {
+    "TITLE": "Shopping Cart",
+    "EMPTY": "Your Cart is Empty",
+    "TOTAL": "Total",
+    "CHECKOUT": "Proceed to Checkout",
+    "REMOVE": "Remove"
+  },
+  "LOGIN": {
+    "TITLE": "Login",
+    "EMAIL": "Email",
+    "PASSWORD": "Password",
+    "SUBMIT": "Login",
+    "NO_ACCOUNT": "Don't have an account?",
+    "REGISTER": "Register",
+    "ERROR": "Invalid email or password"
+  },
+  "REGISTER": {
+    "TITLE": "Register",
+    "USERNAME": "Username",
+    "EMAIL": "Email",
+    "PASSWORD": "Password",
+    "CONFIRM_PASSWORD": "Confirm Password",
+    "SUBMIT": "Register",
+    "HAVE_ACCOUNT": "Already have an account?",
+    "LOGIN": "Login",
+    "PASSWORD_MISMATCH": "Passwords do not match",
+    "EMAIL_EXISTS": "This email is already registered",
+    "BIRTH_DATE": "Birth Date",
+    "BIRTH_DATE_REQUIRED": "Birth date is required"
+  },
+  "PROFILE": {
+    "TITLE": "Profile",
+    "FULL_NAME": "Full Name",
+    "EMAIL": "Email",
+    "BIRTH_DATE": "Birth Date",
+    "EDIT": "Edit",
+    "SAVE": "Save",
+    "CANCEL": "Cancel"
+  }
+} 

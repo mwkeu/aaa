@@ -1,0 +1,237 @@
+.navbar {
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  z-index: 1000;
+}
+
+.search-container {
+  width: 40%;
+  position: relative;
+}
+
+.search-results {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.search-result-img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+}
+
+.list-group-item {
+  display: flex;
+  align-items: center;
+}
+
+.list-group-item .price {
+  margin-left: auto;
+  font-weight: bold;
+}
+
+.category-bar {
+  overflow-x: auto;
+  white-space: nowrap;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+.category-bar::-webkit-scrollbar {
+  display: none;
+}
+
+.category-bar a {
+  transition: color 0.3s ease;
+}
+
+.category-bar a:hover {
+  color: #007bff !important;
+}
+
+/* Dark Theme Styles */
+.dark-theme .search-results {
+  background: #333;
+  border-color: #444;
+}
+
+.dark-theme .list-group-item {
+  background: #333;
+  color: white;
+  border-color: #444;
+}
+
+.dark-theme .list-group-item:hover {
+  background: #444;
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+  .search-container {
+    width: 100%;
+    margin: 1rem 0;
+  }
+
+  .navbar-nav {
+    margin-top: 1rem;
+  }
+
+  .nav-item {
+    margin: 0.5rem 0;
+  }
+}
+
+/* Dark Theme Styles */
+.dark-theme {
+  background-color: #333;
+  color: #fff;
+}
+
+.dark-theme .navbar {
+  background-color: #222 !important;
+}
+
+.dark-theme .category-bar {
+  background-color: #222 !important;
+  border-color: #444 !important;
+}
+
+.dark-theme .category-bar a {
+  color: #fff !important;
+}
+
+.dark-theme .form-control {
+  background-color: #444;
+  border-color: #555;
+  color: #fff;
+}
+
+.dark-theme .btn-outline-dark {
+  color: #fff;
+  border-color: #fff;
+}
+
+.dropdown-toggle::after {
+  margin-left: 8px;
+}
+
+.dropdown-menu {
+  min-width: 150px;
+}
+
+.dropdown-item {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 8px 16px;
+}
+
+.dropdown-item:hover {
+  background-color: #f8f9fa;
+}
+
+.dropdown-item:active {
+  background-color: #007bff;
+  color: white;
+}
+
+.dropdown-toggle {
+  cursor: pointer;
+}
+
+.language-selector .btn {
+  min-width: 100px;
+}
+
+/* Dark theme support */
+.dark-theme .dropdown-menu {
+  background-color: #333;
+  border-color: #444;
+}
+
+.dark-theme .dropdown-item {
+  color: #fff;
+}
+
+.dark-theme .dropdown-item:hover {
+  background-color: #444;
+}
+
+/* Butonlar arası boşluk */
+.navbar-nav .nav-item {
+  margin-right: 1rem;
+}
+
+.navbar-nav .nav-item:last-child {
+  margin-right: 0;
+}
+
+/* Tema değiştirme butonu */
+.btn-outline-secondary {
+  padding: 0.5rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 40px;
+}
+
+.btn-outline-secondary i {
+  font-size: 1.1rem;
+}
+
+/* Dark tema için özel stiller */
+.dark-theme .btn-outline-secondary {
+  color: #fff;
+  border-color: #fff;
+}
+
+.dark-theme .btn-outline-secondary:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Dil seçici dropdown */
+.dropdown-menu {
+  min-width: 150px;
+  padding: 0.5rem 0;
+}
+
+.dropdown-item {
+  padding: 0.5rem 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.dropdown-item:hover {
+  background-color: #f8f9fa;
+}
+
+.dark-theme .dropdown-menu {
+  background-color: #333;
+  border-color: #444;
+}
+
+.dark-theme .dropdown-item {
+  color: #fff;
+}
+
+.dark-theme .dropdown-item:hover {
+  background-color: #444;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.list-group-item-action:hover {
+  background-color: #f8f9fa;
+}
+
+/* Dark theme support */
+.dark-theme .list-group-item-action:hover {
+  background-color: #2c3e50;
+}

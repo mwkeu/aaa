@@ -1,0 +1,153 @@
+<header>
+  <nav class="navbar navbar-expand-lg fixed-top" [class.navbar-dark]="isDarkTheme" [class.bg-dark]="isDarkTheme" [class.navbar-light]="!isDarkTheme" [class.bg-light]="!isDarkTheme">
+    <div class="container">
+      <!-- Logo -->
+      <a class="navbar-brand" routerLink="/">E-Ticaret</a>
+
+      <!-- Toggle Button -->
+      <button 
+        class="navbar-toggler" 
+        type="button" 
+        data-bs-toggle="collapse" 
+        data-bs-target="#navbarContent"
+        aria-controls="navbarContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Search Bar -->
+      <div class="search-container">
+        <input 
+          type="text" 
+          class="form-control" 
+          [placeholder]="'COMMON.SEARCH' | translate" 
+          [(ngModel)]="searchTerm"
+          (input)="onSearch($event)"
+          (blur)="onSearchBlur()"
+          [attr.aria-label]="'COMMON.SEARCH' | translate">
+
+        <!-- Search Results -->
+        <div class="search-results list-group" *ngIf="showResults && searchResults.length > 0">
+          <div 
+            *ngFor="let product of searchResults" 
+            class="list-group-item list-group-item-action"
+            (click)="selectProduct(product.pdId)">
+            <div class="d-flex align-items-center cursor-pointer">
+              <img [src]="product.pdImg" [alt]="product.pdName" class="search-result-img">
+              <div class="ms-3">
+                <div class="fw-bold">{{product.pdName}}</div>
+                <div class="text-muted">{{product.pdPrice | currency:'TRY':'symbol-narrow':'1.0-0'}}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Side Items -->
+      <ul class="navbar-nav ms-auto align-items-center">
+        <!-- Theme Toggle -->
+        <li class="nav-item me-3">
+          <button 
+            class="btn btn-outline-secondary" 
+            (click)="toggleTheme()" 
+            [attr.aria-label]="isDarkTheme ? 'Light Mode' : 'Dark Mode'">
+            <i class="fas" [ngClass]="isDarkTheme ? 'fa-sun' : 'fa-moon'"></i>
+          </button>
+        </li>
+
+        <!-- Language Selector -->
+        <li class="nav-item me-3">
+          <div class="btn-group">
+            <button 
+              class="btn btn-outline-secondary dropdown-toggle" 
+              type="button" 
+              data-bs-toggle="dropdown" 
+              data-bs-auto-close="true" 
+              aria-expanded="false">
+              <i class="fas fa-globe me-2"></i>
+              {{ currentLang === 'tr' ? 'TR' : 'EN' }}
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end">
+              <li>
+                <button class="dropdown-item" (click)="changeLanguage('tr')">
+                  <span class="me-2">🇹🇷</span>
+                  Türkçe
+                </button>
+              </li>
+              <li>
+                <button class="dropdown-item" (click)="changeLanguage('en')">
+                  <span class="me-2">🇬🇧</span>
+                  English
+                </button>
+              </li>
+            </ul>
+          </div>
+        </li>
+
+        <!-- Login/Profile Button -->
+        <li class="nav-item me-3">
+          <!-- Giriş yapmamış kullanıcı için login butonu -->
+          <button 
+            *ngIf="!currentUser"
+            class="btn btn-outline-primary" 
+            type="button"
+            (click)="openLoginModal()">
+            <i class="fas fa-user me-2"></i>
+            {{ 'COMMON.LOGIN' | translate }}
+          </button>
+
+          <!-- Giriş yapmış kullanıcı için profil butonu -->
+          <button 
+            *ngIf="currentUser"
+            class="btn btn-outline-primary" 
+            type="button"
+            (click)="goToProfile()">
+            <i class="fas fa-user me-2"></i>
+            {{ currentUser.fullName }}
+          </button>
+        </li>
+
+        <!-- Cart Button -->
+        <li class="nav-item me-3">
+          <button 
+            class="btn btn-outline-success position-relative" 
+            type="button"
+            (click)="openCart()"
+            [attr.aria-label]="'COMMON.CART' | translate">
+            <i class="fas fa-shopping-cart"></i>
+            <span 
+              class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" 
+              *ngIf="cartItemCount > 0"
+              [attr.aria-label]="'COMMON.CART_COUNT' | translate">
+              {{cartItemCount}}
+            </span>
+          </button>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Category Bar -->
+  <div 
+    class="category-bar py-2" 
+    [class.bg-dark]="isDarkTheme"
+    [class.bg-light]="!isDarkTheme"
+    role="navigation"
+    [attr.aria-label]="'COMMON.CATEGORIES' | translate">
+    <div class="container">
+      <div class="d-flex justify-content-between overflow-auto">
+        <button 
+          *ngFor="let category of categories"
+          class="btn text-decoration-none px-3" 
+          [class.text-light]="isDarkTheme"
+          [class.text-dark]="!isDarkTheme"
+          (click)="selectCategory(category)"
+          type="button"
+          [attr.aria-label]="category.name + ' ' + ('COMMON.SELECT_CATEGORY' | translate)">
+          {{category.name}}
+        </button>
+      </div>
+    </div>
+  </div>
+</header>

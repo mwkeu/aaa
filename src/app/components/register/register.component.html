@@ -1,0 +1,119 @@
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card shadow">
+        <div class="card-body p-4">
+          <h2 class="text-center mb-4">{{ 'REGISTER.TITLE' | translate }}</h2>
+          
+          <form (ngSubmit)="onSubmit()" #registerForm="ngForm">
+            <!-- Full Name -->
+            <div class="mb-3">
+              <label for="fullName" class="form-label">{{ 'REGISTER.FULL_NAME' | translate }}</label>
+              <input 
+                type="text" 
+                class="form-control" 
+                id="fullName"
+                name="fullName"
+                [(ngModel)]="user.fullName" 
+                required
+                minlength="3"
+                #fullNameInput="ngModel">
+              <div class="text-danger" *ngIf="fullNameInput.invalid && fullNameInput.touched">
+                {{ 'REGISTER.FULL_NAME_REQUIRED' | translate }}
+              </div>
+            </div>
+
+            <!-- Birth Date -->
+            <div class="mb-3">
+              <label for="birthDate" class="form-label">{{ 'REGISTER.BIRTH_DATE' | translate }}</label>
+              <input 
+                type="date" 
+                class="form-control" 
+                id="birthDate" 
+                name="birthDate"
+                [(ngModel)]="user.birthDate"
+                required
+                #birthDateInput="ngModel">
+              <div class="text-danger" *ngIf="birthDateInput.invalid && (birthDateInput.dirty || birthDateInput.touched || submitted)">
+                {{ 'REGISTER.BIRTH_DATE_REQUIRED' | translate }}
+              </div>
+            </div>
+            
+            <!-- Email -->
+            <div class="mb-3">
+              <label for="email" class="form-label">{{ 'REGISTER.EMAIL' | translate }}</label>
+              <input 
+                type="email" 
+                class="form-control" 
+                id="email"
+                name="email"
+                [(ngModel)]="user.email" 
+                required
+                email
+                #emailInput="ngModel">
+              <div class="text-danger" *ngIf="emailInput.invalid && emailInput.touched">
+                {{ 'REGISTER.EMAIL_REQUIRED' | translate }}
+              </div>
+            </div>
+            
+            <!-- Password -->
+            <div class="mb-3">
+              <label for="password" class="form-label">{{ 'REGISTER.PASSWORD' | translate }}</label>
+              <input 
+                type="password" 
+                class="form-control" 
+                id="password"
+                name="password"
+                [(ngModel)]="user.password" 
+                required
+                minlength="6"
+                #passwordInput="ngModel">
+              <div class="text-danger" *ngIf="passwordInput.invalid && passwordInput.touched">
+                {{ 'REGISTER.PASSWORD_REQUIRED' | translate }}
+              </div>
+            </div>
+
+            <!-- Confirm Password -->
+            <div class="mb-3">
+              <label for="confirmPassword" class="form-label">{{ 'REGISTER.CONFIRM_PASSWORD' | translate }}</label>
+              <input 
+                type="password" 
+                class="form-control" 
+                id="confirmPassword"
+                name="confirmPassword"
+                [(ngModel)]="user.confirmPassword" 
+                required
+                #confirmPasswordInput="ngModel">
+              <div class="text-danger" *ngIf="confirmPasswordInput.invalid && confirmPasswordInput.touched">
+                {{ 'REGISTER.CONFIRM_PASSWORD_REQUIRED' | translate }}
+              </div>
+            </div>
+
+            <!-- Error Message -->
+            <div *ngIf="error" class="alert alert-danger">
+              {{error}}
+            </div>
+            
+            <!-- Submit Button -->
+            <button 
+              type="submit" 
+              class="btn btn-primary w-100 mb-3"
+              [disabled]="registerForm.invalid">
+              {{ 'REGISTER.SUBMIT' | translate }}
+            </button>
+
+            <!-- Login Link -->
+            <div class="text-center">
+              <p class="mb-0">
+                {{ 'REGISTER.HAVE_ACCOUNT' | translate }} 
+                <a routerLink="/login" class="text-primary text-decoration-none">
+                  {{ 'REGISTER.LOGIN' | translate }}
+                </a>
+              </p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

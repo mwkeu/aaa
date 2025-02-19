@@ -1,0 +1,70 @@
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card shadow">
+        <div class="card-body p-4">
+          <h2 class="text-center mb-4">{{ 'LOGIN.TITLE' | translate }}</h2>
+          
+          <form (ngSubmit)="onSubmit()" #loginForm="ngForm">
+            <!-- Email -->
+            <div class="mb-3">
+              <label for="email" class="form-label">{{ 'LOGIN.EMAIL' | translate }}</label>
+              <input 
+                type="email" 
+                class="form-control" 
+                id="email"
+                name="email"
+                [(ngModel)]="email" 
+                required
+                email
+                #emailInput="ngModel">
+              <div class="text-danger" *ngIf="emailInput.invalid && emailInput.touched">
+                {{ 'LOGIN.EMAIL_REQUIRED' | translate }}
+              </div>
+            </div>
+            
+            <!-- Password -->
+            <div class="mb-3">
+              <label for="password" class="form-label">{{ 'LOGIN.PASSWORD' | translate }}</label>
+              <input 
+                type="password" 
+                class="form-control" 
+                id="password"
+                name="password"
+                [(ngModel)]="password" 
+                required
+                minlength="6"
+                #passwordInput="ngModel">
+              <div class="text-danger" *ngIf="passwordInput.invalid && passwordInput.touched">
+                {{ 'LOGIN.PASSWORD_REQUIRED' | translate }}
+              </div>
+            </div>
+
+            <!-- Error Message -->
+            <div *ngIf="error" class="alert alert-danger">
+              {{error}}
+            </div>
+            
+            <!-- Submit Button -->
+            <button 
+              type="submit" 
+              class="btn btn-primary w-100 mb-3"
+              [disabled]="loginForm.invalid">
+              {{ 'LOGIN.SUBMIT' | translate }}
+            </button>
+
+            <!-- Register Link -->
+            <div class="text-center">
+              <p class="mb-0">
+                {{ 'LOGIN.NO_ACCOUNT' | translate }} 
+                <a routerLink="/register" class="text-primary text-decoration-none">
+                  {{ 'LOGIN.REGISTER' | translate }}
+                </a>
+              </p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

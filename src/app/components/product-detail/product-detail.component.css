@@ -1,0 +1,77 @@
+.product-image-container {
+  width: 100%;
+  max-width: 500px;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.product-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.card {
+  border: none;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Dark theme support */
+:host-context(.dark-theme) .card {
+  background-color: #333;
+  color: #fff;
+}
+
+:host-context(.dark-theme) .card-title,
+:host-context(.dark-theme) .card-text {
+  color: #fff;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .product-image-container {
+    height: 300px;
+  }
+}
+
+.product-title {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.price {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #2c3e50;
+}
+
+.rating {
+  font-size: 1.2rem;
+}
+
+.description {
+  color: #666;
+  line-height: 1.6;
+}
+
+.comment-card {
+  padding: 1rem 0;
+}
+
+.comment-card:last-child hr {
+  display: none;
+}
+
+/* Dark Theme Support */
+.dark-theme .price {
+  color: #fff;
+}
+
+.dark-theme .description {
+  color: #ddd;
+}

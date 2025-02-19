@@ -1,0 +1,14 @@
+.container {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+  
+  @media (max-width: 768px) {
+    .row {
+      margin: 0 -8px;
+    }
+    
+    .col {
+      padding: 8px;
+    }
+  }

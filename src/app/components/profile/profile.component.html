@@ -1,0 +1,80 @@
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="card shadow">
+        <div class="card-body p-4">
+          <h2 class="text-center mb-4">{{ 'PROFILE.TITLE' | translate }}</h2>
+          
+          <!-- Görüntüleme Modu -->
+          <div *ngIf="!isEditing">
+            <div class="row mb-4">
+              <div class="col-md-6 mb-3">
+                <label class="form-label text-muted">{{ 'PROFILE.FULL_NAME' | translate }}</label>
+                <p class="h5">{{user.fullName}}</p>
+              </div>
+              
+              <div class="col-md-6 mb-3">
+                <label class="form-label text-muted">{{ 'PROFILE.EMAIL' | translate }}</label>
+                <p class="h5">{{user.email}}</p>
+              </div>
+
+              <div class="col-md-6 mb-3">
+                <label class="form-label text-muted">{{ 'PROFILE.BIRTH_DATE' | translate }}</label>
+                <p class="h5">{{birthDate | date:'dd/MM/yyyy'}}</p>
+              </div>
+            </div>
+
+            <button class="btn btn-primary" (click)="startEditing()">
+              {{ 'PROFILE.EDIT' | translate }}
+            </button>
+          </div>
+
+          <!-- Düzenleme Modu -->
+          <div *ngIf="isEditing">
+            <div class="mb-3">
+              <label for="fullName" class="form-label">{{ 'PROFILE.FULL_NAME' | translate }}</label>
+              <input 
+                type="text" 
+                class="form-control" 
+                id="fullName"
+                name="fullName"
+                [(ngModel)]="editedUser.fullName">
+            </div>
+
+            <div class="mb-3">
+              <label for="birthDate" class="form-label">{{ 'PROFILE.BIRTH_DATE' | translate }}</label>
+              <input 
+                type="date" 
+                class="form-control" 
+                id="birthDate"
+                name="birthDate"
+                [(ngModel)]="editedUser.birthDate">
+            </div>
+
+            <div class="d-flex gap-2">
+              <button class="btn btn-primary" (click)="saveChanges()">
+                {{ 'PROFILE.SAVE' | translate }}
+              </button>
+              <button class="btn btn-secondary" (click)="cancelEditing()">
+                {{ 'PROFILE.CANCEL' | translate }}
+              </button>
+            </div>
+          </div>
+
+          <!-- Alt Butonlar -->
+          <div class="d-flex justify-content-between mt-4">
+            <button class="btn btn-outline-primary" (click)="goToHome()">
+              <i class="fas fa-home me-2"></i>
+              {{ 'COMMON.HOME' | translate }}
+            </button>
+            
+            <button class="btn btn-outline-danger" (click)="logout()">
+              <i class="fas fa-sign-out-alt me-2"></i>
+              {{ 'COMMON.LOGOUT' | translate }}
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> 

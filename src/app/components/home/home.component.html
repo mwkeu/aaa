@@ -1,0 +1,39 @@
+<div class="container mt-4">
+  <!-- Filters -->
+  <div class="row mb-4">
+    <div class="col-md-6">
+      <div class="btn-group">
+        <button 
+          *ngFor="let category of categories"
+          class="btn" 
+          [ngClass]="{'btn-primary': selectedCategory === category.code, 'btn-outline-primary': selectedCategory !== category.code}"
+          (click)="filterByCategory(category.code)">
+          {{category.name}}
+        </button>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="btn-group float-end">
+        <button 
+          class="btn" 
+          [ngClass]="{'btn-primary': sortOrder === 'asc', 'btn-outline-primary': sortOrder !== 'asc'}"
+          (click)="sortByPrice(true)">
+          <i class="fas fa-sort-amount-down-alt"></i> Fiyat: Düşükten Yükseğe
+        </button>
+        <button 
+          class="btn" 
+          [ngClass]="{'btn-primary': sortOrder === 'desc', 'btn-outline-primary': sortOrder !== 'desc'}"
+          (click)="sortByPrice(false)">
+          <i class="fas fa-sort-amount-down"></i> Fiyat: Yüksekten Düşüğe
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Products Grid -->
+  <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+    <div class="col" *ngFor="let product of filteredProducts">
+      <app-product-card [product]="product" (click)="navigateToDetail(product.pdId)"></app-product-card>
+    </div>
+  </div>
+</div>

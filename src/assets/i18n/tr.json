@@ -1,0 +1,91 @@
+{
+  "COMMON": {
+    "SEARCH": "Ara",
+    "CATEGORIES": "Kategoriler",
+    "LOGIN": "Giriş Yap",
+    "CART": "Sepet",
+    "CART_COUNT": "Sepetteki Ürün Sayısı",
+    "MY_ACCOUNT": "Hesabım",
+    "LOGOUT": "Çıkış Yap"
+  },
+  "CATEGORIES": {
+    "cosmetics": "Kozmetik",
+    "furniture": "Mobilya",
+    "food": "Yemek",
+    "pet": "Pet"
+  },
+  "PRODUCTS": {
+    "VIEW_DETAILS": "Ürünü İncele",
+    "ADD_TO_CART": "Sepete Ekle",
+    "PRICE": "Fiyat",
+    "1001": "L'Oreal Paris Nemlendirici Krem",
+    "1002": "MAC Ruj Seti",
+    "1003": "Maybelline Maskara",
+    "2001": "Modern Koltuk Takımı",
+    "2002": "Çalışma Masası",
+    "2003": "Yemek Masası Takımı",
+    "3001": "Organik Meyve Sepeti",
+    "3002": "Premium Kahve Çekirdeği",
+    "1001_DESC": "24 saat kalıcı nemlendirme etkisi",
+    "1002_DESC": "Uzun süre kalıcı mat rujlar",
+    "1003_DESC": "Hacim veren ve uzatan maskara",
+    "4001": "Royal Canin Köpek Maması",
+    "4001_DESC": "Yetişkin köpekler için premium mama",
+    "4002": "Whiskas Kedi Maması",
+    "4002_DESC": "Tüm yaş grupları için kedi maması"
+  },
+  "PRODUCT": {
+    "ADD_TO_CART": "Sepete Ekle",
+    "VIEW_DETAILS": "Ürünü İncele",
+    "DESCRIPTION": "Ürün Açıklaması",
+    "REVIEWS": "Müşteri Yorumları",
+    "QUANTITY": "Miktar"
+  },
+  "CART": {
+    "TITLE": "Alışveriş Sepeti",
+    "EMPTY": "Sepetiniz Boş",
+    "TOTAL": "Toplam",
+    "CHECKOUT": "Ödemeye Geç",
+    "REMOVE": "Kaldır"
+  },
+  "LOGIN": {
+    "TITLE": "Giriş Yap",
+    "EMAIL": "E-posta",
+    "PASSWORD": "Şifre",
+    "SUBMIT": "Giriş Yap",
+    "NO_ACCOUNT": "Hesabınız yok mu?",
+    "REGISTER": "Kayıt Ol",
+    "ERROR": "E-posta veya şifre hatalı",
+    "EMAIL_REQUIRED": "E-posta adresi gerekli",
+    "PASSWORD_REQUIRED": "Şifre gerekli"
+  },
+  "REGISTER": {
+    "TITLE": "Kayıt Ol",
+    "FULL_NAME": "Ad Soyad",
+    "BIRTH_YEAR": "Doğum Yılı",
+    "EMAIL": "E-posta",
+    "PASSWORD": "Şifre",
+    "CONFIRM_PASSWORD": "Şifreyi Tekrarla",
+    "SUBMIT": "Kayıt Ol",
+    "HAVE_ACCOUNT": "Zaten hesabınız var mı?",
+    "LOGIN": "Giriş Yap",
+    "PASSWORD_MISMATCH": "Şifreler eşleşmiyor",
+    "EMAIL_EXISTS": "Bu e-posta adresi zaten kayıtlı",
+    "FULL_NAME_REQUIRED": "Ad soyad gerekli",
+    "BIRTH_YEAR_REQUIRED": "Doğum yılı gerekli",
+    "EMAIL_REQUIRED": "E-posta adresi gerekli",
+    "PASSWORD_REQUIRED": "Şifre gerekli",
+    "CONFIRM_PASSWORD_REQUIRED": "Şifre tekrarı gerekli",
+    "BIRTH_DATE": "Doğum Tarihi",
+    "BIRTH_DATE_REQUIRED": "Doğum tarihi gerekli"
+  },
+  "PROFILE": {
+    "TITLE": "Profil",
+    "FULL_NAME": "Ad Soyad",
+    "EMAIL": "E-posta",
+    "BIRTH_DATE": "Doğum Tarihi",
+    "EDIT": "Düzenle",
+    "SAVE": "Kaydet",
+    "CANCEL": "İptal"
+  }
+} 

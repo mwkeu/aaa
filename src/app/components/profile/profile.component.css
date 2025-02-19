@@ -1,0 +1,42 @@
+.card {
+  border: none;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.card-body {
+  padding: 2rem;
+}
+
+.form-label {
+  font-size: 0.875rem;
+  margin-bottom: 0.25rem;
+}
+
+.h5 {
+  margin-bottom: 0;
+  color: #2c3e50;
+}
+
+/* Dark Theme Support */
+:host-context(.dark-theme) .card {
+  background-color: #2c3e50;
+  color: #fff;
+}
+
+:host-context(.dark-theme) .h5 {
+  color: #fff;
+}
+
+:host-context(.dark-theme) .text-muted {
+  color: #a8b5c3 !important;
+}
+
+:host-context(.dark-theme) .btn-outline-danger {
+  color: #dc3545;
+  border-color: #dc3545;
+}
+
+:host-context(.dark-theme) .btn-outline-danger:hover {
+  color: #fff;
+  background-color: #dc3545;
+} 

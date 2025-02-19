@@ -1,0 +1,72 @@
+<div class="container mt-5">
+  <h2>Alışveriş Sepeti</h2>
+  
+  <div class="row" *ngIf="cartItems.length > 0">
+    <div class="col-md-8">
+      <!-- Cart Items -->
+      <div class="card mb-3" *ngFor="let item of cartItems">
+        <div class="card-body">
+          <div class="row align-items-center">
+            <div class="col-md-2">
+              <img [src]="item.pdImg" [alt]="item.pdName" class="img-fluid">
+            </div>
+            <div class="col-md-4">
+              <h5 class="card-title">{{item.pdName}}</h5>
+              <p class="card-text text-muted">{{item.pdPrice | currency:'TRY':'symbol-narrow':'1.0-0'}}</p>
+            </div>
+            <div class="col-md-3">
+              <div class="input-group">
+                <input 
+                  type="number" 
+                  class="form-control" 
+                  [value]="item.quantity"
+                  (change)="updateQuantity(item.pdId, $event)"
+                  min="1">
+              </div>
+            </div>
+            <div class="col-md-2">
+              <p class="h5">{{item.pdPrice * item.quantity | currency:'TRY':'symbol-narrow':'1.0-0'}}</p>
+            </div>
+            <div class="col-md-1">
+              <button 
+                class="btn btn-link text-danger" 
+                (click)="removeItem(item.pdId)"
+                aria-label="Ürünü sil">
+                <i class="fas fa-trash"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Order Summary -->
+    <div class="col-md-4">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Sipariş Özeti</h5>
+          <hr>
+          <div class="d-flex justify-content-between mb-3">
+            <span>Toplam</span>
+            <span class="h5">{{total | currency:'TRY':'symbol-narrow':'1.0-0'}}</span>
+          </div>
+          <button 
+            class="btn btn-primary w-100" 
+            (click)="checkout()">
+            Ödemeye Geç
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Empty Cart -->
+  <div class="text-center py-5" *ngIf="cartItems.length === 0">
+    <i class="fas fa-shopping-cart fa-3x mb-3 text-muted"></i>
+    <h3>Sepetiniz Boş</h3>
+    <p class="text-muted">Alışverişe başlamak için ürünleri keşfedin.</p>
+    <button routerLink="/" class="btn btn-primary">
+      Alışverişe Başla
+    </button>
+  </div>
+</div>
